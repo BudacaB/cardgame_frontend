@@ -13,7 +13,7 @@ export class DeckService {
     constructor(private httpService: HttpClient) {}
 
     getDeck() {
-        const deckURL = 'http://127.0.0.1:3000/deck';
+        const deckURL = 'http://127.0.0.1:3000/randomizedDeck';
         return this.httpService.get(deckURL)
     }
 
