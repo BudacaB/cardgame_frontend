@@ -1,0 +1,9 @@
+
+<div *ngIf="hasServerResponded">
+  <div *ngFor="let card of deck">
+    <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
+    class="card">
+  </div>
+</div>
+
+<!-- https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/10_of_clubs.png -->
