@@ -42,3 +42,4 @@ For each card change to random position in deck
   - 1 BACKEND: create a method dealCards(howMany) 
   - 2 FRONTEND: create a component <active-game> where you display two players and their cards
   - 3 FRONTEND modify home component to show: if a gamee is started: "active-game" component. if a game is not started: "begin-game" component
+  - BACKEND+FRONTEND implement start game mechanism (socket.io for communication between 2 browsers thru backend)
