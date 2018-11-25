@@ -7,3 +7,4 @@
 
 25Nov:
 1. ^1. Style deck display - maybe array like instead of one long column
+2.  method that splits the deck in 2 - input este un deck  / outpot 2 deckuri egale - made in C#
