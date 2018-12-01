@@ -1,9 +1,33 @@
 
-<div *ngIf="hasServerResponded">
-  <div *ngFor="let card of deck">
-    <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
-    class="card">
+
+  <div *ngIf="hasServerResponded">
+    <!-- <div *ngFor="let card of deck"> -->
+    <h3>Dealt Deck</h3>
+      <div *ngFor="let card of deck.dealtDeck">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
+            class="card">
+          </li>
+        </ul>
+    </div>
   </div>
-</div>
+    <hr>
+  <h3>Left Deck</h3>
+  <div *ngFor="let card of deck.leftDeck">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
+        class="card">
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
 
 <!-- https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/10_of_clubs.png -->

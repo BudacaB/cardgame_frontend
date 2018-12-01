@@ -8,7 +8,8 @@ import { DeckService } from '../deck.service';
 })
 export class DeckComponent implements OnInit {
 
-  deck: Array<Card>;
+  //deck: Array<Card>;
+  deck: JSON;
   hasServerResponded: boolean = false;
 
   constructor(private deckService: DeckService) { }
@@ -17,7 +18,8 @@ export class DeckComponent implements OnInit {
 
     this.deckService.getDeck().subscribe(
       (response) => {
-        this.deck = response as Array<Card>;
+        //this.deck = response as Array<Card>;
+        this.deck = response as JSON;
         this.hasServerResponded = true;
       }
     )
