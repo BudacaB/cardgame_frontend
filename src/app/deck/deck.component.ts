@@ -19,9 +19,12 @@ export class DeckComponent implements OnInit {
       (response) => {
         this.deck = response as Array<Card>;
         this.hasServerResponded = true;
+
       }
     )
 
   }
+
+  
 
 }
