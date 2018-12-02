@@ -3,9 +3,9 @@
   <div *ngIf="hasServerResponded">
     <!-- <div *ngFor="let card of deck"> -->
     <h3>Dealt Deck</h3>
-      <div *ngFor="let card of deck.dealtDeck">
+      <div>
         <ul class="list-inline">
-          <li class="list-inline-item">
+          <li class="list-inline-item" *ngFor="let card of deck.dealtDeck">
             <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
             class="card">
           </li>
@@ -14,14 +14,25 @@
   </div>
     <hr>
   <h3>Left Deck</h3>
-  <div *ngFor="let card of deck.leftDeck">
+  <div>
     <ul class="list-inline">
-      <li class="list-inline-item">
+      <li class="list-inline-item" *ngFor="let card of deck.leftDeck">
         <img src="https://s3.eu-central-1.amazonaws.com/bogdanbudaca-cards/RegularCards/{{card.id}}.png" 
         class="card">
       </li>
     </ul>
   </div>
+
+
+  <form>
+    <div *ngFor="let mess of messageArray">
+      <div>{{ mess }}</div>
+    </div>
+    <button type="button" (click)="send()">Send</button>
+  </form>
+
+
+
 
 
 

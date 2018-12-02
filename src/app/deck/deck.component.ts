@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeckService } from '../deck.service';
+import * as socketIo from 'socket.io-client';
+
 
 @Component({
   selector: 'app-deck',
@@ -7,23 +9,40 @@ import { DeckService } from '../deck.service';
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent implements OnInit {
+  messageArray: Array<string> = [];
+  private socket: any;
+  initSocket() {
+    this.socket = socketIo('http://localhost:3000');
+    this.socket.on('message', (message) => {
+      this.messageArray.push(message)
+      console.log('am prim mesaj', message)
+    })
+  }
 
-  //deck: Array<Card>;
-  deck: JSON;
+  deck: DealerResponse = {
+    dealtDeck: [],
+    leftDeck: []
+  };
   hasServerResponded: boolean = false;
 
   constructor(private deckService: DeckService) { }
 
   ngOnInit() {
+    this.initSocket()
 
     this.deckService.getDeck().subscribe(
       (response) => {
         //this.deck = response as Array<Card>;
-        this.deck = response as JSON;
+        this.deck = response as DealerResponse;
         this.hasServerResponded = true;
       }
     )
 
+  }
+
+  send() {
+    let text = 'Writing stuff'
+    this.socket.emit('message' , text)
   }
 
 }
