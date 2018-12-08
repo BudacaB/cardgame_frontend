@@ -24,11 +24,13 @@
   </div>
 
 
-  <form>
-    <div *ngFor="let mess of messageArray">
-      <div>{{ mess }}</div>
-    </div>
-    <button type="button" (click)="send()">Send</button>
+  <form name="Chat">
+    <label>Chat</label><br>
+      <textarea cols="30" rows="3" placeholder="Type your message" name="chatarea"></textarea><br>
+      <button type="button" (click)="send()">Send</button>
+      <div *ngFor="let mess of messageArray">
+        <div>{{ mess }}</div>
+      </div>
   </form>
 
 
