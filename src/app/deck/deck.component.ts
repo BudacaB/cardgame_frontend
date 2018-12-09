@@ -9,6 +9,7 @@ import * as socketIo from 'socket.io-client';
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent implements OnInit {
+ 
   messageArray: Array<string> = [];
   private socket: any;
   initSocket() {
@@ -40,9 +41,14 @@ export class DeckComponent implements OnInit {
 
   }
 
-  send() {
+ /*  send() {
     let text = 'Writing stuff'
     this.socket.emit('message' , text)
+  } */
+
+  sendAndReset(input) {
+    this.socket.emit('message' , input.value)
+    input.value = '';
   }
 
 }

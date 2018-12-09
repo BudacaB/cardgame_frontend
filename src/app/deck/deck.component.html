@@ -24,10 +24,10 @@
   </div>
 
 
-  <form name="Chat">
+  <form>
     <label>Chat</label><br>
-      <textarea cols="30" rows="3" placeholder="Type your message" name="chatarea"></textarea><br>
-      <button type="button" (click)="send()">Send</button>
+      <input #chat type="text" placeholder="Type your message"><br>
+      <button type="button" (click)="sendAndReset(chat)">Send</button>
       <div *ngFor="let mess of messageArray">
         <div>{{ mess }}</div>
       </div>
